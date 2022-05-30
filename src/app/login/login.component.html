@@ -1,0 +1,44 @@
+<h1>login works!</h1>
+<form #myloginform="ngForm">
+  <div>
+    <label for="">username</label>
+    <input
+      type="text"
+      name="username"
+      id="username"
+      #username="ngModel"
+      [(ngModel)]="user.username"
+      required
+      minlength="5"
+    />
+    <div
+      class="alert alert-danger"
+      [hidden]="username.valid || username.pristine"
+    >
+      There is Error[empty field or length is less than 5]
+    </div>
+  </div>
+  <div>
+    <label for="">password</label>
+    <input
+      type="password"
+      name="password"
+      required
+      #password="ngModel"
+      [(ngModel)]="user.password"
+    />
+    <div
+      class="alert alert-danger"
+      [hidden]="password.valid || password.pristine"
+    >
+      Empty Field
+    </div>
+  </div>
+  <input
+    class="btn btn-primary"
+    type="button"
+    value="login"
+    (click)="login()"
+    [disabled]="myloginform.invalid"
+  />
+</form>

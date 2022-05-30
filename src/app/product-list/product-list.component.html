@@ -1,0 +1,36 @@
+<h1 [style]="{ 'text-align': 'center' }">All Products</h1>
+<input
+  (click)="goToAddProduct()"
+  class="btn btn-danger m-5"
+  type="button"
+  value="Add Product "
+/>
+<input
+  (click)="goToPhotos()"
+  class="btn btn-warning m-5"
+  type="button"
+  value="Show Photos"
+/>
+<input
+  (click)="goToLogin()"
+  class="btn btn-primary m-5"
+  type="button"
+  value="Login"
+/>
+<!-- <app-login></app-login> -->
+<!-- <app-product-add></app-product-add> -->
+<div class="conatiner" [style]="{ margin: '20px' }">
+  <div class="row">
+    <app-product-card
+      class="col-md-4 mb-2"
+      *ngFor="let product of products"
+      [singleProduct]="product"
+      [showdtl]="true"
+    >
+    </app-product-card>
+  </div>
+</div>
+<!-- <ul>
+  <li *ngFor="let product of products">{{ product.title }}</li>
+</ul> -->
+<!-- <app-photos></app-photos> -->

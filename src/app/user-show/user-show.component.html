@@ -1,0 +1,16 @@
+<h1 class="text-center m-5 text-danger">
+  <h1>You Are Allowed To Be Here</h1>
+  {{ userData?.username }} Profile
+</h1>
+<div class="d-flex justify-content-center m-5 text-center">
+  <div class="card" style="width: 18rem">
+    <img
+      src="https://via.placeholder.com/600/"
+      class="card-img-top"
+    />
+    <div class="card-body">
+      <p>{{ userData?.email }}</p>
+      <button class="btn btn-danger" [routerLink]="['/products']">Home</button>
+    </div>
+  </div>
+</div>

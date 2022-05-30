@@ -1,0 +1,26 @@
+<!-- <p>product-card works!</p> -->
+<div class="card" [style]="{ margin: '20px' }">
+  <div class="card-body">
+    <p class="card-text">({{ singleProduct?.id }})</p>
+    <div class="img">
+      <img [src]="singleProduct?.image" alt="noImage" />
+    </div>
+    <div class="card-title" [routerLink]="['/products', singleProduct?.id]">
+      Title:{{ singleProduct?.title }}
+    </div>
+    <p class="card-title">Price : {{ singleProduct?.price }}</p>
+
+    <p class="card-title">
+      Description : {{ singleProduct.description | stringslice:0:5 }}
+    </p>
+    <p class="card-title">category :{{ singleProduct?.category }}</p>
+    <p class="card-title">Rate:{{ singleProduct?.rating?.rate }}</p>
+    <input
+      [hidden]="!showdtl"
+      [routerLink]="['/products', singleProduct?.id]"
+      class="btn btn-warning"
+      type="button"
+      value="Show more "
+    />
+  </div>
+</div>

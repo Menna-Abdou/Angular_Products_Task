@@ -1,0 +1,30 @@
+<h1>product-add works!</h1>
+<form [formGroup]="myform">
+  <div>
+    <label for="">title</label>
+    <input type="text" formControlName="title">
+    <div class="alert alert-danger" [hidden]="title.valid || title.pristine">Field is Required</div>
+  </div>
+  <div>
+    <label for="">description</label>
+    <input type="text" formControlName="description">
+    <div class="alert alert-danger" [hidden]="description.valid || description.pristine">Field is Required</div>
+
+  </div>
+  <div>
+    <label for="">image</label>
+    <input type="text" formControlName="image">
+    <div class="alert alert-danger" [hidden]="image.valid || image.pristine">Field is Required</div>
+
+  </div>
+  <div>
+    <label for="">price</label>
+    <input type="text" formControlName="price">
+    <div class="alert alert-danger" [hidden]="price.valid || price.pristine">Field is Required</div>
+
+  </div>
+  <input class="btn btn-primary" type="button" value="add" [disabled]="myform.invalid" (click)="add(myform.value)">
+</form>
+{{ myform.value | json }}
+<!-- ---------------------------------------------------------- -->
+
